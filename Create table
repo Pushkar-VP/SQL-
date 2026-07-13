@@ -1,0 +1,55 @@
+CREATE TABLE student (
+    roll_no INT,
+    name VARCHAR(50),
+    class INT,
+    dive VARCHAR(20),
+    percentage FLOAT
+);
+
+INSERT INTO student (roll_no, name, class, dive, percentage)
+VALUES
+    (1, 'RAM', 10, 'A', 45.20),
+    (2, 'SHAM', 12, 'C', 52.0),
+    (3, 'SAMEJ', 10, 'A', 78.20),
+    (4, 'YASH', 12, 'B', 82.40),
+    (5, 'OM', 10, 'C', 84.60);
+
+
+/* Q1. FIND TOPPER OF CLASS */
+  
+SELECT * FROM student
+ORDER BY percentage
+LIMIT 1;
+
+/* Q2. FIND DROPPER OF CLASS */
+
+SELECT * FROM student
+ORDER BY percentage DESC
+LIMIT 1;
+
+/* Q3. SORT BY NAME DESC ORDER */
+
+SELECT * FROM student
+ORDER BY name DESC;
+
+/* Q4.ADD COLUMN */
+
+ALTER TABLE student
+ADD COLUMN age INT;
+
+/* Q5.UPDATE DATATYPE OF COLUMN */
+
+ALTER TABLE student
+MODIFY percentage DOUBLE;
+
+/* Q6. Update Column name div to division and class to year */
+
+
+ALTER TABLE student
+RENAME COLUMN dive TO division;
+
+/* Q7.Add PRIMARY KEY constraint */
+ 
+ALTER TABLE student ADD PRIMARY KEY(roll_no);
+
+SELECT * FROM  student;
