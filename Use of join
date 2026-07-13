@@ -1,0 +1,11 @@
+SELECT C1.class_id,
+                      C1.room_name,
+                       S1.SUB_name
+       FROM classroom C1 LEFT JOIN subject S1
+ON C1.CSUB_id = S1.SUB_id
+UNION
+                SELECT C1.class_id,
+                C1.room_name,
+                 S1.SUB_name
+FROM classroom C1 RIGHT JOIN subject
+S1 ON C1.CSUB_id = S1.SUB_id;
